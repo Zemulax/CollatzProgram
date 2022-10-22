@@ -31,7 +31,7 @@ namespace CollatzProgram1
                     }
                     else
                     {
-                    CollatzResolver(num);
+                     CollatzResolver(submittedNumber);
                     NumberInput.Clear();
                     }
 
@@ -42,117 +42,6 @@ namespace CollatzProgram1
                 {
                     MessageBox.Show("Null or values > 2^17 are not allowed yet!"); //"Nine Hundred ninety nine quadrillion"
                 }
-
-
-            
-
-        }
-
-        /// <summary>
-        /// This is the engine of the collatz conjecture. checks if number is correct,even or odd.
-        /// </summary>
-        /// <param name="number">The number provided by user to calculate the conjecture.</param>
-        public void CollatzResolver(long number)
-        {
-
-            long total;
-            counter = 0;
-            if (number <= 0)
-            {             //if x is any negative integer or zero, halt!
-                MessageBox.Show("Please enter a number from 1\n");
-            }
-            else
-            {
-                if (number % 2 == 0)
-                {// this block of code begins when the argument is even
-                    while (number % 2 == 0)
-                    {
-                        total = Even(number);
-                        counter++;
-                        Loga(total);
-
-                        if (total == 1)
-                        {                    //dont loop forever!
-                            Text1();
-                            break;
-                        }
-                        number--;
-
-                        while (total % 2 == 1)
-                        {            //nested for loop in iteration
-                            total = Odd(total);
-                            counter++;
-                            Loga(total);
-                        }
-                        while (total % 2 == 0)
-                        {
-                            total = Even(total);
-                            counter++;
-                            Loga(total);
-
-                            if (total == 1)
-                            {                    //dont loop forever!
-                                Text1();
-                                break;
-                            }
-                            while (total % 2 == 1)
-                            {   //this method call is likedly to have the lowest number per iteration
-                                total = Odd(total);
-                                counter++;
-                                Loga(total);
-
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    if (number <= 0)
-                    {
-                        MessageBox.Show("Please enter a number from 1\n");
-                    }
-                    else
-                    {
-
-
-                        while (number % 2 == 1)
-                        {      // this block of code begins when the argument is odd
-
-                            total = Odd(number);
-                            counter++;
-                            Loga(total);
-                            number--;
-                            while (total % 2 == 0)
-                            {
-                                total = Even(total);
-                                counter++;
-                                Loga(total);
-                            }
-                            while (total % 2 == 1)
-                            {
-                                if (total == 1)
-                                {                    //dont loop forever!
-                                    Text1();
-                                    break;
-                                }
-                                total = Odd(total);
-                                counter++;
-                                Loga(total);
-
-                                while (total % 2 == 0)
-                                {
-                                    total = Even(total);
-                                    counter++;
-                                    Loga(total);
-
-                                }
-                            }
-                        }
-                    }
-                }
-                Display2.Text += "\n**** Counter is " + counter + "\n";
-                
-            }
         }
 
         /// <summary>
@@ -184,9 +73,7 @@ namespace CollatzProgram1
         /// </summary>
         public void Text1()
         {
-
             Display2.Text += "\n <<<< 1 has been Reached! >>>>\n";
-            
         }
         /// <summary>
         /// This method simply logs a generated value
