@@ -1,0 +1,30 @@
+public fun loadAffirmations(): List <Affirmation>
+    {
+        return listOf<Affirmation>(
+         Affirmation(R.string.affirmation1),
+            Affirmation(R.string.affirmation2),
+            Affirmation(R.string.affirmation3),
+            Affirmation(R.string.affirmation4),
+            Affirmation(R.string.affirmation5),
+            Affirmation(R.string.affirmation6),
+            Affirmation(R.string.affirmation7),
+            Affirmation(R.string.affirmation8),
+            Affirmation(R.string.affirmation9),
+            Affirmation(R.string.affirmation10)
+
+        )
+    }
+
+///////////////////////////////////////////////
+
+<string name="app_name">Affirmations</string>
+    <string name="affirmation1">The Greatest</string>
+    <string name="affirmation2">I believe in myself</string>
+    <string name="affirmation3">Each day is anew opportunity to grow</string>
+    <string name="affirmation4">I have so much to be grateful for</string>
+    <string name="affirmation5">I will be present in all moments</string>
+    <string name="affirmation6">Your time wil come, if you wait for it</string>
+    <string name="affirmation7">Bullet in the gun</string>
+    <string name="affirmation8">Machine</string>
+    <string name="affirmation9">Thunder</string>
+    <string name="affirmation10">Friction</string>
